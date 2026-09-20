@@ -25,15 +25,14 @@ class Student : Person
         StudentId = studentId;
         GPA = gpa;
     }
-    public void DisplayBasicInfo()
+    public void DisplayStudentInfo()
 
     {
         Console.WriteLine("ــــــــــــــــــــــــــــ ");
 
         Console.WriteLine("Studint Informition");
         Console.WriteLine("ــــــــــــــــــــــــــــ ");
-        Console.WriteLine($"Name : {Name}");
-        Console.WriteLine($"Email : {Email}");
+      DisplayBasicInfo();
         Console.WriteLine($"Studint ID : {StudentId}");
         Console.WriteLine($"Studint GPA : {GPA}");
     }
@@ -42,15 +41,14 @@ class Employee : Person
 {
     public string EmployeeId;
     public double Salary;
-    public void DisplayBasicInfo()
+    public void DisplayEmployeeInfo()
 
     {
         Console.WriteLine("ــــــــــــــــــــــــــــ ");
 
         Console.WriteLine("Employee Informition");
         Console.WriteLine("ــــــــــــــــــــــــــــ ");
-        Console.WriteLine($"Name : {Name}");
-        Console.WriteLine($"Email : {Email}");
+      DisplayBasicInfo();
         Console.WriteLine($"Employee ID : {EmployeeId}");
         Console.WriteLine($"Employee salary : {Salary}");
 
@@ -70,16 +68,12 @@ class Teacher : Employee
     {
         CoursName = cours_name;
     }
-    public void DisplayBasicInfo()
+    public void DisplayTeacherInfo()
 
     {
+        
         Console.WriteLine("ــــــــــــــــــــــــــــ ");
-        Console.WriteLine("Teacher Informition");
-        Console.WriteLine("ــــــــــــــــــــــــــــ ");
-        Console.WriteLine($"Name : {Name}");
-        Console.WriteLine($"Email : {Email}");
-        Console.WriteLine($"Teacher ID : {EmployeeId}");
-        Console.WriteLine($"Teacher salary : {Salary}");
+       DisplayEmployeeInfo();
         Console.WriteLine($"Courcs : {CoursName}");
     }
     public void Teach()
@@ -96,10 +90,14 @@ class program
     {
 
         Student studint1 = new Student("Omar Saeed", "omar454@gmail.com", "86545", 2.84);
-        studint1.DisplayBasicInfo();
-       Teacher teacher1 = new Teacher("Fahed Ahmad", "famd6544@gmail.com", "13464", "Math", 120000);
-       teacher1.DisplayBasicInfo();
-       teacher1.Teach();
+        studint1.DisplayStudentInfo();
+
+        Employee employee1 = new Employee("Ali Ahmed", "ali123@gmail.com", "98765", 100000);
+        employee1.DisplayEmployeeInfo();
+
+        Teacher teacher1 = new Teacher("Fahed Ahmad", "famd6544@gmail.com", "13464", "Math", 120000);
+        teacher1.DisplayTeacherInfo();
+        teacher1.Teach();
 
     }
 }
